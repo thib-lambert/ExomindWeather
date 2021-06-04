@@ -13,13 +13,9 @@ private let kFetchDataTime = 10
 
 class DetailsViewController: UIViewController, NavigationProtocol {
     
-    var navigationSegue: Segue = .modal
-    var instanceIdentifier: String? = nil
-    var previousViewController: UIViewController? = nil
-    
 	// MARK: - Outlets
 	@IBOutlet private weak var refreshButton: UIButton!
-    @IBOutlet weak var tableView: UITableView! {
+    @IBOutlet private weak var tableView: UITableView! {
         didSet {
             self.tableView.dataSource = self
             self.tableView.delegate = self
@@ -35,6 +31,11 @@ class DetailsViewController: UIViewController, NavigationProtocol {
             self.progressBar.transform = self.progressBar.transform.scaledBy(x: 1, y: 3)
 		}
 	}
+    
+    // MARK: - NavigationProtocol variables
+    var navigationSegue: Segue = .modal
+    var instanceIdentifier: String?
+    var previousViewController: UIViewController?
 	
 	// MARK: - Variables
     private var models: [WeatherViewModel] = []

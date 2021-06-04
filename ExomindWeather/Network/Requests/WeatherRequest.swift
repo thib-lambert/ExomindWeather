@@ -9,18 +9,18 @@ import PromiseKit
 import NetworkUtilsKit
 
 struct WeatherRequest: ApiRequest {
-	
-	let city: String
-	
-	var path: String { "/data/2.5/weather" }
-	let method: RequestMethod = .get
-	let encoding: Encoding = .url
-	
-	var parameters: Parameters? {
-		[
-			"q": self.city,
+    
+    let city: String
+    
+    var path: String { "/data/2.5/weather" }
+    let method: RequestMethod = .get
+    let encoding: Encoding = .url
+    
+    var parameters: Parameters? {
+        [
+            "q": self.city,
             "units": "metric",
-			"appid": "438af97430c3705c5cd98dc30d6c277f"
-		]
-	}
+            "appid": "438af97430c3705c5cd98dc30d6c277f"
+        ]
+    }
 }
