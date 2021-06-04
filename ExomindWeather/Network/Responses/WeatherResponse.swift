@@ -12,7 +12,6 @@ struct WeatherResponse: Decodable, Weather {
 	// MARK: - WeatherItem
 	struct WeatherItem: Decodable {
 		
-		let description: String
 		let icon: String
 	}
 	
@@ -27,6 +26,8 @@ struct WeatherResponse: Decodable, Weather {
 	let name: String
 	
 	var temp: Double { self.main.temp }
-	var cloudDescription: String? { self.weather.first?.description }
-	var cloudIcon: String? { self.weather.first?.icon }
+    var cloudIcon: URL? {
+        guard let icon = self.weather.first?.icon else { return nil }
+        return URL(string: "https://openweathermap.org/img/wn/\(icon)@2x.png")
+    }
 }

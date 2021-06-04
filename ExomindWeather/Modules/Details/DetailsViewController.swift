@@ -7,7 +7,7 @@
 
 import UtilsKit
 
-private let kFinishTime = 60
+private let kFinishTime = 30
 private let kUpdateMessageTime = 6
 private let kFetchDataTime = 10
 
@@ -22,6 +22,8 @@ class DetailsViewController: UIViewController, NavigationProtocol {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             self.tableView.dataSource = self
+            self.tableView.delegate = self
+            self.tableView.separatorStyle = .none
             self.tableView.register(WeatherDetailsCell.self)
             self.tableView.tableFooterView = UIView()
             self.tableView.backgroundView = self.loadingLabel
@@ -30,6 +32,7 @@ class DetailsViewController: UIViewController, NavigationProtocol {
     @IBOutlet private var progressBar: UIProgressView! {
 		didSet {
 			self.progressBar.setProgress(0, animated: false)
+            self.progressBar.transform = self.progressBar.transform.scaledBy(x: 1, y: 3)
 		}
 	}
 	
@@ -56,8 +59,8 @@ class DetailsViewController: UIViewController, NavigationProtocol {
 		DetailsInteractor(with: self)
 	}()
     
-    private lazy var loadingLabel: UILabel = {
-        let label = UILabel()
+    private lazy var loadingLabel: WeatherLabel = {
+        let label = WeatherLabel()
         label.text = self.availablesMessages.first
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -76,7 +79,14 @@ class DetailsViewController: UIViewController, NavigationProtocol {
 		super.viewDidLayoutSubviews()
 		
 		self.refreshButton.layer.cornerRadius = self.refreshButton.bounds.height / 4
-	}
+        
+        let maskLayerPath = UIBezierPath(roundedRect: self.progressBar.bounds,
+                                         cornerRadius: self.progressBar.bounds.height / 2)
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.progressBar.bounds
+        maskLayer.path = maskLayerPath.cgPath
+        self.progressBar.layer.mask = maskLayer
+    }
     
     // MARK: - Timers
     private func setupTimers() {
@@ -86,11 +96,10 @@ class DetailsViewController: UIViewController, NavigationProtocol {
                                                  repeats: true) { [weak self] _ in
             guard let self = self else { return }
             
-            self.runLoop += 1
             let progress = Double(self.runLoop) / Double(kFinishTime)
             self.progressBar.setProgress(Float(progress), animated: true)
             
-            if self.runLoop.isMultiple(of: kUpdateMessageTime) {
+            if self.runLoop.isMultiple(of: kUpdateMessageTime) && self.runLoop > 0 {
                 log(.custom("✍️"), "Loading message updated!")
                 self.messageIndex += 1
                 self.loadingLabel.text = self.availablesMessages[self.messageIndex]
@@ -116,6 +125,8 @@ class DetailsViewController: UIViewController, NavigationProtocol {
                 self.tableView.backgroundView = nil
                 self.tableView.reloadData()
             }
+            
+            self.runLoop += 1
         }
     }
 	
@@ -134,6 +145,7 @@ class DetailsViewController: UIViewController, NavigationProtocol {
     // MARK: - Actions
     @IBAction private func reset() {
         self.refreshButton.isHidden = true
+        self.progressBar.setProgress(0, animated: false)
         self.progressBar.isHidden = false
         self.loadingLabel.text = self.availablesMessages.first
         self.tableView.backgroundView = self.loadingLabel
@@ -161,6 +173,14 @@ extension DetailsViewController: UITableViewDataSource {
         cell.data = self.models[indexPath.row]
         
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension DetailsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        60
     }
 }
 

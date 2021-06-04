@@ -11,5 +11,5 @@ struct WeatherViewModel {
 	
 	let temp: Double
 	let city: String
-	let cloud: String
+	let cloudIcon: URL?
 }

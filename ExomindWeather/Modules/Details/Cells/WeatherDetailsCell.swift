@@ -13,6 +13,13 @@ class WeatherDetailsCell: UITableViewCell {
     @IBOutlet private weak var cityLabel: UILabel!
     @IBOutlet private weak var tempLabel: UILabel!
     @IBOutlet private weak var cloudImage: UIImageView!
+    @IBOutlet private weak var stackView: UIStackView! {
+        didSet {
+            self.stackView.layer.cornerRadius = 10
+            self.stackView.layer.borderWidth = 1
+            self.stackView.layer.borderColor = UIColor.black.cgColor
+        }
+    }
     
     // MARK: - Variables
     var data: WeatherViewModel? {
@@ -21,7 +28,7 @@ class WeatherDetailsCell: UITableViewCell {
             
             self.cityLabel.text = data.city
             self.tempLabel.text = "\(data.temp) °C"
-            self.cloudImage.image = UIImage(systemName: "cloud.fill")
+            self.cloudImage.setImage(with: data.cloudIcon)
         }
     }
 }

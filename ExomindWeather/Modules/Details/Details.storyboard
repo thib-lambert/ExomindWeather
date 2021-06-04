@@ -23,8 +23,8 @@
                             </tableView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6hL-vf-cGG">
                                 <rect key="frame" x="30" y="838" width="354" height="4"/>
-                                <color key="backgroundColor" name="FireOpal"/>
-                                <color key="tintColor" name="NaplesYellow"/>
+                                <color key="backgroundColor" name="TextColor"/>
+                                <color key="tintColor" name="BackgroundSecondary"/>
                             </progressView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXY-Sl-opV" customClass="WeatherButton" customModule="ExomindWeather" customModuleProvider="target">
                                 <rect key="frame" x="30" y="802" width="354" height="40"/>
@@ -38,7 +38,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" name="DavysGrey"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="X2T-vP-bAC" secondAttribute="trailing" id="4aO-if-9yE"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6hL-vf-cGG" secondAttribute="trailing" constant="30" id="9t8-CJ-BEP"/>
@@ -63,15 +63,20 @@
             <point key="canvasLocation" x="139" y="80"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="KXY-Sl-opV">
+            <size key="intrinsicContentSize" width="68" height="36"/>
+        </designable>
+    </designables>
     <resources>
-        <namedColor name="DavysGrey">
-            <color red="0.31372549019607843" green="0.31764705882352939" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="Background">
+            <color red="0.90588235294117647" green="0.90196078431372551" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="FireOpal">
-            <color red="0.94901960784313721" green="0.37254901960784315" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BackgroundSecondary">
+            <color red="0.94901960784313721" green="0.63137254901960782" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="NaplesYellow">
-            <color red="1" green="0.8784313725490196" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="TextColor">
+            <color red="0.19215686274509805" green="0.30588235294117649" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

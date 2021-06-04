@@ -12,7 +12,7 @@ class DetailsPresenter: Presenter<DetailsViewController> {
 	func didRefresh(city: String, data: Weather) {
 		self.view?.didRefresh(forCity: city, data: WeatherViewModel(temp: data.temp,
 																	city: city,
-																	cloud: data.cloudDescription ?? ""))
+                                                                    cloudIcon: data.cloudIcon))
 	}
 	
 	func didfetchCities(cities: [String]) {

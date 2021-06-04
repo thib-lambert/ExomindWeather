@@ -11,6 +11,5 @@ protocol Weather {
 	
 	var name: String { get }
 	var temp: Double { get }
-	var cloudDescription: String? { get }
-	var cloudIcon: String? { get }
+	var cloudIcon: URL? { get }
 }

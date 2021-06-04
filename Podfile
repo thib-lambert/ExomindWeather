@@ -11,5 +11,6 @@ target 'ExomindWeather' do
   pod 'NetworkUtilsKit', '~> 1.0'
   pod 'PromiseKit', '~> 6.0'
   pod 'UtilsKit', '~> 2.1'
+  pod 'SDWebImage', '~> 5.0'
 
 end
