@@ -172,7 +172,7 @@ extension DetailsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: WeatherDetailsCell = tableView.dequeueCell(forIndexPath: indexPath)
         cell.data = self.models[indexPath.row]
-        
+        cell.selectionStyle = .none
         return cell
     }
 }
