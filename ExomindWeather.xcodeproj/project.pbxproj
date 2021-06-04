@@ -25,6 +25,10 @@
 		5351FBEF266A27DE00B54C43 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5351FBEA266A27DE00B54C43 /* ApiRequest.swift */; };
 		5351FBF0266A27DE00B54C43 /* WeatherWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5351FBEC266A27DE00B54C43 /* WeatherWorker.swift */; };
 		5351FBF2266A29E100B54C43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5351FBF1266A29E100B54C43 /* AppDelegate.swift */; };
+		5351FBF6266A2D2F00B54C43 /* WeatherButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5351FBF5266A2D2F00B54C43 /* WeatherButton.swift */; };
+		5351FBF9266A2DB400B54C43 /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5351FBF8266A2DB400B54C43 /* UIColor+Colors.swift */; };
+		5351FBFC266A339D00B54C43 /* WeatherDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5351FBFB266A339D00B54C43 /* WeatherDetailsCell.swift */; };
+		5351FBFE266A33E700B54C43 /* WeatherDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5351FBFD266A33E700B54C43 /* WeatherDetailsCell.xib */; };
 		846D27F04810E3CB4398A411 /* Pods_ExomindWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E1E6FD914726D956550E2E /* Pods_ExomindWeather.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +53,10 @@
 		5351FBEA266A27DE00B54C43 /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		5351FBEC266A27DE00B54C43 /* WeatherWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherWorker.swift; sourceTree = "<group>"; };
 		5351FBF1266A29E100B54C43 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5351FBF5266A2D2F00B54C43 /* WeatherButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherButton.swift; sourceTree = "<group>"; };
+		5351FBF8266A2DB400B54C43 /* UIColor+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
+		5351FBFB266A339D00B54C43 /* WeatherDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsCell.swift; sourceTree = "<group>"; };
+		5351FBFD266A33E700B54C43 /* WeatherDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherDetailsCell.xib; sourceTree = "<group>"; };
 		C5E1E6FD914726D956550E2E /* Pods_ExomindWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExomindWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA138275F36F997C67B8FDEF /* Pods-ExomindWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExomindWeather.release.xcconfig"; path = "Target Support Files/Pods-ExomindWeather/Pods-ExomindWeather.release.xcconfig"; sourceTree = "<group>"; };
 		FC3C4FB3EB267AA6B5C4588A /* Pods-ExomindWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExomindWeather.debug.xcconfig"; path = "Target Support Files/Pods-ExomindWeather/Pods-ExomindWeather.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +125,8 @@
 		5351FBAA266A24C500B54C43 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				5351FBF7266A2DA600B54C43 /* Extensions */,
+				5351FBF4266A2D0300B54C43 /* Views */,
 				5351FBDE266A27D700B54C43 /* CleanArchi */,
 				5351FBDC266A27D700B54C43 /* Protocols */,
 			);
@@ -154,9 +164,10 @@
 		5351FBCD266A279A00B54C43 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				5351FBFA266A338700B54C43 /* Cells */,
 				5351FBCE266A279A00B54C43 /* ViewModels */,
-				5351FBD0266A279A00B54C43 /* DetailsPresenter.swift */,
 				5351FBD1266A279A00B54C43 /* Details.storyboard */,
+				5351FBD0266A279A00B54C43 /* DetailsPresenter.swift */,
 				5351FBD2266A279A00B54C43 /* DetailsInteractor.swift */,
 				5351FBD3266A279A00B54C43 /* DetailsViewController.swift */,
 			);
@@ -212,6 +223,31 @@
 				5351FBEC266A27DE00B54C43 /* WeatherWorker.swift */,
 			);
 			path = Workers;
+			sourceTree = "<group>";
+		};
+		5351FBF4266A2D0300B54C43 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5351FBF5266A2D2F00B54C43 /* WeatherButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5351FBF7266A2DA600B54C43 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5351FBF8266A2DB400B54C43 /* UIColor+Colors.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5351FBFA266A338700B54C43 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5351FBFB266A339D00B54C43 /* WeatherDetailsCell.swift */,
+				5351FBFD266A33E700B54C43 /* WeatherDetailsCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		6A0F4D30812A3984627B8934 /* Pods */ = {
@@ -293,6 +329,7 @@
 				5351FBD6266A279A00B54C43 /* LaunchScreen.storyboard in Resources */,
 				5351FB9E266A24AF00B54C43 /* Assets.xcassets in Resources */,
 				5351FBD5266A279A00B54C43 /* Home.storyboard in Resources */,
+				5351FBFE266A33E700B54C43 /* WeatherDetailsCell.xib in Resources */,
 				5351FBD9266A279A00B54C43 /* Details.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,11 +392,14 @@
 				5351FBD7266A279A00B54C43 /* WeatherViewModel.swift in Sources */,
 				5351FBE4266A27D700B54C43 /* Presenter.swift in Sources */,
 				5351FBEE266A27DE00B54C43 /* WeatherRequest.swift in Sources */,
+				5351FBF9266A2DB400B54C43 /* UIColor+Colors.swift in Sources */,
 				5351FBD8266A279A00B54C43 /* DetailsPresenter.swift in Sources */,
 				5351FBDA266A279A00B54C43 /* DetailsInteractor.swift in Sources */,
 				5351FBE2266A27D700B54C43 /* Weather.swift in Sources */,
+				5351FBFC266A339D00B54C43 /* WeatherDetailsCell.swift in Sources */,
 				5351FBE3266A27D700B54C43 /* Interactor.swift in Sources */,
 				5351FBDB266A279A00B54C43 /* DetailsViewController.swift in Sources */,
+				5351FBF6266A2D2F00B54C43 /* WeatherButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,7 @@ struct WeatherRequest: ApiRequest {
 	var parameters: Parameters? {
 		[
 			"q": self.city,
+            "units": "metric",
 			"appid": "438af97430c3705c5cd98dc30d6c277f"
 		]
 	}

@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,11 +13,39 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="G7P-ei-CIr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="wrh-iS-Qf9">
+                                <rect key="frame" x="60" y="74" width="294" height="294"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wrh-iS-Qf9" secondAttribute="height" multiplier="1:1" id="MQ4-hs-AnP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ExomindWeather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="End-CY-oIG">
+                                <rect key="frame" x="96.5" y="430" width="221" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="YED-Rt-dLL"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="c3q-ed-Cmb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" name="FireOpal"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Upr-SP-OUU"/>
+                        <color key="backgroundColor" name="DavysGrey"/>
+                        <constraints>
+                            <constraint firstItem="End-CY-oIG" firstAttribute="centerY" secondItem="G7P-ei-CIr" secondAttribute="centerY" id="1fX-sb-GC4"/>
+                            <constraint firstItem="Upr-SP-OUU" firstAttribute="trailing" secondItem="wrh-iS-Qf9" secondAttribute="trailing" constant="60" id="7GB-dV-khK"/>
+                            <constraint firstItem="End-CY-oIG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Upr-SP-OUU" secondAttribute="leading" constant="10" id="8kP-5H-fj9"/>
+                            <constraint firstItem="wrh-iS-Qf9" firstAttribute="top" secondItem="Upr-SP-OUU" secondAttribute="top" constant="30" id="B0N-Sc-EMl"/>
+                            <constraint firstItem="End-CY-oIG" firstAttribute="centerX" secondItem="G7P-ei-CIr" secondAttribute="centerX" id="ItD-f9-49f"/>
+                            <constraint firstItem="Upr-SP-OUU" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="End-CY-oIG" secondAttribute="trailing" constant="10" id="XvJ-Sd-prz"/>
+                            <constraint firstItem="wrh-iS-Qf9" firstAttribute="centerX" secondItem="G7P-ei-CIr" secondAttribute="centerX" id="fjw-Xv-T20"/>
+                            <constraint firstItem="wrh-iS-Qf9" firstAttribute="leading" secondItem="Upr-SP-OUU" secondAttribute="leading" constant="60" id="s5Z-Ml-Jht"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -22,4 +53,13 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sun" width="512" height="512"/>
+        <namedColor name="DavysGrey">
+            <color red="0.31372549019607843" green="0.31764705882352939" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="FireOpal">
+            <color red="0.94901960784313721" green="0.37254901960784315" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

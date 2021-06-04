@@ -12,39 +12,50 @@
         <!--Details View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="DetailsViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="DetailsViewController" customModule="TTWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="DetailsViewController" customModule="ExomindWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nwH-uA-Ow5">
-                                <rect key="frame" x="30" y="848" width="354" height="4"/>
-                                <color key="progressTintColor" name="Naples Yellow"/>
-                                <color key="trackTintColor" name="Fire Opal"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X2T-vP-bAC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6hL-vf-cGG">
+                                <rect key="frame" x="30" y="838" width="354" height="4"/>
+                                <color key="backgroundColor" name="FireOpal"/>
+                                <color key="tintColor" name="NaplesYellow"/>
                             </progressView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVo-Q0-6uj">
-                                <rect key="frame" x="50" y="801" width="314" height="36"/>
-                                <color key="backgroundColor" name="Naples Yellow"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Refresh">
-                                    <color key="titleColor" name="Davys Grey"/>
-                                </state>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXY-Sl-opV" customClass="WeatherButton" customModule="ExomindWeather" customModuleProvider="target">
+                                <rect key="frame" x="30" y="802" width="354" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dta-li-kIR"/>
+                                </constraints>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="reset" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Hcw-b8-4f7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" name="Davys Grey"/>
+                        <color key="backgroundColor" name="DavysGrey"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fVo-Q0-6uj" secondAttribute="bottom" constant="25" id="3FS-Ml-rm1"/>
-                            <constraint firstItem="nwH-uA-Ow5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="FDF-Ax-hHC"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nwH-uA-Ow5" secondAttribute="trailing" constant="30" id="Nft-9y-gXx"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="nwH-uA-Ow5" secondAttribute="bottom" constant="10" id="VrR-Av-Hhg"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fVo-Q0-6uj" secondAttribute="trailing" constant="50" id="hk0-eQ-ehk"/>
-                            <constraint firstItem="fVo-Q0-6uj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="xp1-ej-ASt"/>
+                            <constraint firstAttribute="trailing" secondItem="X2T-vP-bAC" secondAttribute="trailing" id="4aO-if-9yE"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6hL-vf-cGG" secondAttribute="trailing" constant="30" id="9t8-CJ-BEP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="KXY-Sl-opV" secondAttribute="bottom" constant="20" id="APq-hK-2Ma"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KXY-Sl-opV" secondAttribute="trailing" constant="30" id="GmC-do-BcX"/>
+                            <constraint firstItem="6hL-vf-cGG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="O75-3H-SEb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="6hL-vf-cGG" secondAttribute="bottom" constant="20" id="OUJ-YP-9tu"/>
+                            <constraint firstItem="X2T-vP-bAC" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="YUg-np-uKH"/>
+                            <constraint firstItem="KXY-Sl-opV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="Zku-Dc-dMp"/>
+                            <constraint firstAttribute="bottom" secondItem="X2T-vP-bAC" secondAttribute="bottom" id="s4d-Tg-CmZ"/>
+                            <constraint firstItem="X2T-vP-bAC" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="y3j-Xy-uCi"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="progressBar" destination="nwH-uA-Ow5" id="yTC-Mh-4yM"/>
-                        <outlet property="refreshButton" destination="fVo-Q0-6uj" id="Pqd-Ad-qkh"/>
+                        <outlet property="progressBar" destination="6hL-vf-cGG" id="r7g-tU-Sb6"/>
+                        <outlet property="refreshButton" destination="KXY-Sl-opV" id="ANp-Bn-IYZ"/>
+                        <outlet property="tableView" destination="X2T-vP-bAC" id="I6A-Dl-Tto"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -53,13 +64,13 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="Davys Grey">
+        <namedColor name="DavysGrey">
             <color red="0.31372549019607843" green="0.31764705882352939" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Fire Opal">
+        <namedColor name="FireOpal">
             <color red="0.94901960784313721" green="0.37254901960784315" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Naples Yellow">
+        <namedColor name="NaplesYellow">
             <color red="1" green="0.8784313725490196" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

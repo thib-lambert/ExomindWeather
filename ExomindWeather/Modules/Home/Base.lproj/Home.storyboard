@@ -12,7 +12,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="TTWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="ExomindWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,49 +23,45 @@
                                     <constraint firstAttribute="width" secondItem="a5Q-Pp-P4W" secondAttribute="height" multiplier="1:1" id="ecL-A1-6X1"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BO8-zu-RZ5">
-                                <rect key="frame" x="50" y="797" width="314" height="40"/>
-                                <color key="backgroundColor" name="Naples Yellow"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="inz-19-Bly"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Start !">
-                                    <color key="titleColor" name="Davys Grey"/>
-                                </state>
-                                <connections>
-                                    <action selector="startApp" destination="BYZ-38-t0r" eventType="touchUpInside" id="akm-Hx-sUE"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TTWeather App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suh-rF-b0j">
-                                <rect key="frame" x="104.5" y="430" width="205" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ExomindWeather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suh-rF-b0j">
+                                <rect key="frame" x="96.5" y="430" width="221" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="pPn-z3-SSC"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="t6f-x7-jy7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" name="Fire Opal"/>
+                                <color key="textColor" name="FireOpal"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6oE-Gz-OuF" customClass="WeatherButton" customModule="ExomindWeather" customModuleProvider="target">
+                                <rect key="frame" x="30" y="802" width="354" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QjW-in-YJP"/>
+                                </constraints>
+                                <state key="normal" title="Start !"/>
+                                <connections>
+                                    <action selector="startApp" destination="BYZ-38-t0r" eventType="touchUpInside" id="A5E-58-z0y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="Davys Grey"/>
+                        <color key="backgroundColor" name="DavysGrey"/>
                         <constraints>
                             <constraint firstItem="suh-rF-b0j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="1tl-F0-zF5"/>
+                            <constraint firstItem="6oE-Gz-OuF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="7rg-Q9-TtJ"/>
                             <constraint firstItem="suh-rF-b0j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="80E-9r-GIw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BO8-zu-RZ5" secondAttribute="trailing" constant="50" id="Hub-Yo-bKX"/>
                             <constraint firstItem="a5Q-Pp-P4W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="M2X-qn-h8E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6oE-Gz-OuF" secondAttribute="bottom" constant="20" id="OjI-vA-wIt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a5Q-Pp-P4W" secondAttribute="trailing" constant="60" id="Vqf-hg-d7g"/>
                             <constraint firstItem="a5Q-Pp-P4W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WbT-NW-fyk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6oE-Gz-OuF" secondAttribute="trailing" constant="30" id="XSN-z3-TJZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="suh-rF-b0j" secondAttribute="trailing" constant="10" id="crV-Pa-fw3"/>
                             <constraint firstItem="a5Q-Pp-P4W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="iky-2E-kpq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BO8-zu-RZ5" secondAttribute="bottom" constant="25" id="l2P-e0-DqV"/>
-                            <constraint firstItem="BO8-zu-RZ5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="zeP-nT-E8f"/>
                             <constraint firstItem="suh-rF-b0j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zzB-1z-2FR"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="startButton" destination="BO8-zu-RZ5" id="b48-7G-hBM"/>
+                        <outlet property="startButton" destination="6oE-Gz-OuF" id="UH4-E9-Sp4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -75,14 +71,11 @@
     </scenes>
     <resources>
         <image name="sun" width="512" height="512"/>
-        <namedColor name="Davys Grey">
+        <namedColor name="DavysGrey">
             <color red="0.31372549019607843" green="0.31764705882352939" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="Fire Opal">
+        <namedColor name="FireOpal">
             <color red="0.94901960784313721" green="0.37254901960784315" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Naples Yellow">
-            <color red="1" green="0.8784313725490196" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

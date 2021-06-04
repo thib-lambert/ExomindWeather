@@ -5,7 +5,7 @@
 //  Created by Thibaud Lambert on 03/06/2021.
 //
 
-import UIKit
+import UtilsKit
 
 class HomeViewController: UIViewController {
 	
@@ -22,9 +22,6 @@ class HomeViewController: UIViewController {
 
 	// MARK: - Actions
 	@IBAction private func startApp() {
-		let storyboard = UIStoryboard(name: "Details", bundle: .main)
-		let vc = storyboard.instantiateViewController(withIdentifier: "DetailsViewController")
-		self.present(vc, animated: true)
+        DetailsViewController.fromStoryboard().modal()
 	}
 }
-
